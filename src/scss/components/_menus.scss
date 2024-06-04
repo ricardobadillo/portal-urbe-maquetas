@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+.fake-feeling-menu {
+  background: var(--blue);
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Poppins-Bold";
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 4rem;
+
+  @media (max-width:768px) {
+    * {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@mixin aside-container($min-width) {
+    display: flex;
+    flex-direction: column;
+    margin: 0rem auto;
+    row-gap: 3rem;
+    width: 90%;
+
+    @media (min-width: $min-width) {
+        margin: 0 auto;
+        max-width: 275px;
+    }
+}

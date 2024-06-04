@@ -1,0 +1,189 @@
+@use "../../../../../scss/components/navbar" as *;
+@use "../../../../../scss/layout/index" as *;
+
+.page-wrapper {
+  @include container;
+
+  @media (min-width: 869px) {
+    flex-direction: row;
+  }
+}
+
+main {
+  margin-bottom: 3rem;
+  margin-right: 0;
+
+  @media (min-width: 869px) {
+    margin-right: 3rem;
+  }
+
+  .main-content {
+    margin-bottom: 5rem;
+    width: 100%
+  }
+}
+
+.principal-background {
+  background-image: url('https://cdn.urbe.edu/portal-urbe/images/shared/centro-idiomas.jpg');
+  background-size: cover;
+  box-shadow: var(--box-shadow);
+  height: 225px;
+  margin-bottom: 2rem;
+
+  @media (min-width: 600px) {
+    background-position: 100% 80%;
+    height: 325px;
+  }
+}
+
+.mission,
+.vision {
+  margin-top: 3rem
+}
+
+aside {
+  @include aside-container(769px);
+
+  .aside__header {
+    background-color: var(--dark-blue);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: block;
+    font-size: 1.8rem;
+  }
+
+  .aside__content {
+    background-color: #eeeeee;
+    line-height: 2;
+    padding: 1rem 1.5rem;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+h2,
+h3,
+h4 {
+  color: var(--dark-blue);
+  font-family: "Poppins-Bold", sans-serif;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--blue);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+mat-panel-title {
+  column-gap: 1rem;
+  display: flex;
+  font-size: 2.4rem;
+  font-weight: 800;
+  padding: 1rem 0rem;
+
+  mat-icon {
+    color: var(--dark-blue);
+    font-weight: 600;
+  }
+}
+
+.important-note-container {
+  background: var(--gray-light);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  row-gap: 1rem;
+  width: 100%;
+
+  h4 {
+    align-items: center;
+    color: #ffbb00;
+    column-gap: 1rem;
+    display: flex;
+    font-size: 2.4rem;
+    justify-content: center;
+    width: 100%;
+
+    @media (min-width: 769px) {
+      justify-content: flex-start;
+    }
+  }
+
+  mat-icon {
+    color: #ffbb00;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+ul {
+  display: grid;
+  padding-left: 0;
+  width: 100%;
+
+  li {
+    align-items: center;
+    column-gap: 0.5rem;
+    display: flex;
+  }
+
+  li::before {
+    color: var(--dark-blue);
+    content: "\2022";
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    width: 2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p:last-of-type {
+    margin-bottom: 1rem;
+  }
+
+  hr {
+    width: 100%;
+  }
+}
+
+.accordion-languages-course {
+  mat-panel-title {
+    font-size: 1.8rem;
+  }
+}
+
+:host::ng-deep {
+  .mat-expansion-indicator::after {
+    border-width: 0 3px 3px 0;
+    color: var(--dark-blue);
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .mat-accordion .mat-expansion-panel:last-of-type {
+    margin-bottom: 3rem;
+  }
+
+  .mat-expansion-panel-header {
+    padding: 3rem 24px;
+  }
+
+  .mat-expansion-panel-body {
+
+    @media (max-width: 599px) {
+      padding: 16px 16px 0px;
+    }
+  }
+}

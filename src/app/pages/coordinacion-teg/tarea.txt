@@ -1,0 +1,8 @@
+1. Hacer todas las importaciones respectivas.
+Nota: Este componente estaba dentro de un módulo, por lo que ahora, para hacer la tarea,
+se ha convirtido en un standalone component.
+Así que es necesario hacer todas las importaciones que tuvo alguna vez su módulo para que funcione.
+
+2. Migrar el HTML a la versión de Angular V17.
+
+3. Seguir pautas de la WIKI.

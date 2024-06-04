@@ -1,0 +1,4 @@
+<div class="banner" [style.background-image]="imageBackground">
+  <h1 class="title" [ngClass]="subtitle ? 'title-with-subtitle' : null"> {{ title | uppercase }} </h1>
+  <h2 class="subtitle" *ngIf="subtitle"> {{ subtitle | uppercase }} </h2>
+</div>

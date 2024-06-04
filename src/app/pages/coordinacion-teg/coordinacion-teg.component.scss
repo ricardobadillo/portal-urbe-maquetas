@@ -1,0 +1,190 @@
+@use "../../../../../scss/layout/index" as *;
+
+.main {
+  @include container();
+
+  ul {
+    cursor: pointer;
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    li::before {
+      content: "\2022";
+      color: var(--dark-blue);
+      font-weight: 600;
+      font-size: 2.5rem;
+      display: inline-block;
+      width: 2rem;
+    }
+
+    li:hover {
+      background-color: var(--gray-light);
+      border-radius: 4px;
+    }
+
+    p{
+      cursor: text;
+    }
+  }
+
+  h1 {
+    color: var(--dark-blue);
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 2.4rem;
+    margin: 3rem 0rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: 869px) {
+      font-size: 3.2rem;
+    }
+  }
+
+  .title-download {
+      color: var(--dark-blue);
+      margin: 3.5rem 0rem 0rem;
+      text-align: left;
+    }
+
+  .description {
+    color: black;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    margin: 0rem 0rem 3rem;
+    text-align: justify;
+
+    h2{
+      color: var(--dark-blue);
+      text-align: left;
+    }
+  }
+
+  .mat-accordion {
+    box-shadow: var(--box-shadow);
+    margin: 0rem 0rem 3rem;
+    ::ng-deep .mat-expansion-indicator::after {
+      color: var(--dark-blue);
+    }
+  }
+
+  mat-expansion-panel {
+    border-radius: 0px !important;
+   
+
+    mat-panel-title {
+      color: var(--dark-blue);
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    mat-icon {
+      color: var(--dark-blue);
+      font-weight: 600;
+    }
+
+    ::ng-deep .mat-expansion-panel-body {
+      padding: 0px 24px 15px !important;
+    }
+  }
+
+  .card-container {
+    margin: 3rem 0rem;
+
+    .card-header {
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+      color: #ffffff;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+
+      @media (min-width: 869px) {
+        padding: 3rem;
+      }
+
+      &::before {
+        backdrop-filter: blur(4px);
+        background: linear-gradient(90deg, var(--dark-blue), hsla(219, 100%, 20%, 0));
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+
+      h2 {
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        font-family: "Poppins-Bold", sans-serif;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+      }
+
+      p {
+        line-height: 3rem;
+        margin: 0;
+        padding: 0;
+        
+        @media (min-width: 600px) {
+          padding: 0 0 0 2rem;
+        }
+      }
+
+      img {
+        display: block;
+        height: auto;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -2;
+      }
+    }
+
+    mat-expansion-panel-header h4 {
+      color: var(--dark-blue);
+      margin: 0;
+    }
+
+  
+    
+    mat-expansion-panel-header p {
+      margin: 0;
+    }
+
+
+    a {
+      align-items: center;
+      color: #000000;
+      display: flex;
+      padding: 1rem 2rem;
+
+      p {
+        margin: 0;
+      }
+      
+      &:hover {
+        background-color: var(--gray-light);
+        border-radius: 4px;
+      }
+    }
+
+    img {
+      height: 2rem;
+      margin: 0rem 1rem 0rem 0rem;
+      width: 2rem;
+    }
+
+    ::ng-deep .mat-expansion-indicator::after {
+      color: var(--dark-blue);
+    }
+  }
+}

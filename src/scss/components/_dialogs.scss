@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+.message-error {
+    background-color: rgba(var(--red-rgb), 0.9) !important;
+}
+
+.message-success {
+    background: rgba(var(--dark-blue-rgb), 0.9) !important;
+}
+
+.message-warning {
+    background: rgba(var(--yellow-rgb), 0.9) !important;
+}
+
+.message-information {
+    background: rgba(var(--blue-light-rgb), 0.9) !important;
+}
+
+.message-error,
+.message-success,
+.message-information,
+.message-warning {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    text-shadow: 0 0 1rem var(--gray);
+    backdrop-filter: blur(4px);
+}
+
+// propiedad modificada para aceptar el color de las clases personalizadas
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color: transparent !important;
+}

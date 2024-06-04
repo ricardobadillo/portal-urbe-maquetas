@@ -1,0 +1,105 @@
+<app-banner [title]="'Coordinación TEG'"/>
+
+<main class="main">
+  <h1 class="main-title"> Coordinación de Investigación </h1>
+  <div class="description">
+
+    <h2>Trabajo Especial de Grado</h2>
+    <p> Para inscribir la Cátedra Seminario de investigación I los requisitos para los alumnos de Todas las Facultades
+      son:
+      disponer de 171 unidades, faltarle tres (3) períodos para graduarse, haber aprobado Ingles V y Servicio
+      Comunitario
+      crédito. En el Caso de la Facultad de Ciencias Jurídicas y Políticas los requisitos son: Pensum 10, 189 unidades
+      crédito mínimo, faltarle tres (3) períodos para graduarse, haber aprobado Ingles V y Servicio Comunitario.
+
+      Luego de inscrito el Seminario de Investigación, el alumno debe dirigirse a la Coordinación para informarse sobre
+      las áreas temáticas a dictarse en el semestre y el horario de las mismas, e indicar área y horario seleccionado.
+      Asimismo, las estrategias para abordar el desarrollo del trabajo estarán basadas en actividades en aula, a través
+      de la conformación de equipos de trabajo, mesas de trabajo, talleres, exposiciones, dinámicas grupales, lluvia de
+      ideas, entre otras. En el área de Proyectos, dependiendo de las carreras y áreas temáticas, se propiciará el
+      desarrollo de proyectos factibles que permitan a los estudiantes presentar propuestas para empresas,
+      instituciones,
+      y/o comunidad, entre otras que permitan la solución a problemas o el aprovechamiento de oportunidades planteados o
+      detectados por estos.,
+
+      Nota: para inscribir la cátedra de Seminario de investigación III, el alumno debe cumplir con el requisito De a
+      haber
+      aprobado Seminario de Investigación II.</p>
+  </div>
+
+  <!-- Acordeón con la información de la sección -->
+  <mat-accordion class="mat-accordion">
+    <mat-expansion-panel *ngFor="let item of infoSeccion; first as isFirst">
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ item.title }} </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+      <ng-container *ngIf="item.multiLine">
+        <p *ngFor="let line of item.multiLine"> {{ line }} </p>
+      </ng-container>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <h2 class="title-download">Formatos de descarga</h2>
+
+  <!-- Archivos descargables de cada facultad -->
+  <ng-container *ngFor="let career of careers">
+    <div class="card-container">
+      <div class="card-header">
+        <img [src]="career.backgroundImage" alt="Imagen de fondo">
+        <h2> {{ career.title }} </h2>
+        <h3> Requisitos </h3>
+
+        <p *ngFor="let line of career.infoMultiLine"> {{ line }} </p>
+      </div>
+
+      <mat-expansion-panel *ngFor="let fileGroup of career.fileGroups">
+        <mat-expansion-panel-header>
+          <mat-panel-title> {{ fileGroup.title }} </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <a *ngFor="let file of fileGroup.files" [href]="file.link" target="_blank">
+          <img [src]="file.icoUrl">
+          <p> {{ file.name }} </p>
+        </a>
+
+        <!-- Lineas de investigacion -->
+        <mat-accordion>
+          <mat-expansion-panel *ngFor=" let value of fileGroup.info">
+            <mat-expansion-panel-header>
+              <mat-panel-title> {{ value.Title }} </mat-panel-title>
+            </mat-expansion-panel-header >
+
+          <mat-accordion>
+            <ng-container *ngFor="let newValue of value.items">
+              <mat-expansion-panel >
+
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{ newValue.newtitle }}</mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-accordion>
+                  <ng-container *ngFor="let informacion of newValue.infovalue">
+                    <ul *ngFor="let nuevainformacion of informacion.value">
+                      <li (click)="nuevainformacion.expanded = !nuevainformacion.expanded">
+                        {{ nuevainformacion.titleline }}
+                      </li>
+
+                      <mat-expansion-panel [expanded]="nuevainformacion.expanded">
+                        <p>{{ nuevainformacion.content }}</p>
+                        <p>{{nuevainformacion.tutores}}</p>
+                      </mat-expansion-panel>
+                    </ul>
+                  </ng-container>
+                </mat-accordion>
+                </mat-expansion-panel>
+                </ng-container>
+            </mat-accordion>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </div>
+  </ng-container>
+</main>

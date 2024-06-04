@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:where(button) {
+    font-family: "Poppins-Regular", sans-serif;
+}
+
+:where(html) {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+:where(body) {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 1.6rem; // El valor de 1rem es equivalente a 10px.
+    margin: 0;
+    min-height: 100%;
+}
+
+:where(a) {
+    text-decoration: none;
+}
+
+:where(p) {
+    line-height: 2.6rem;
+}
+
+:where(figure) {
+    margin: 0;
+    padding: 0;
+}
+
+:where(li) {
+    list-style: none;
+}
+
+:where(ol) {
+    margin: 0;
+    padding: 0;
+}
+
+:where(ul) {
+    margin: 0;
+    padding: 0;
+}
+
+// Scrollbar
+* {
+    &::-webkit-scrollbar {
+        height: 8px; // Tamaño del scroll en horizontal.
+        width: 8px; // Tamaño del scroll en vertical.
+        transition: all ease-in 200ms; // Transición para que el scroll aparezca y desaparezca suavemente.
+    }
+
+    // Thumb.
+    &::-webkit-scrollbar-thumb {
+        background: #b8b8b8;
+        border-radius: 1px;
+
+        &:active {
+            background-color: #818181;
+        }
+
+        &:hover {
+            background: #a0a0a0;
+        }
+    }
+
+    // Track.
+    &::-webkit-scrollbar-track {
+        background: #eeeeee;
+
+        &:active {
+            background: #e2e2e2;
+        }
+
+        &:hover {
+            background: #e2e2e2;
+        }
+    }
+}
+
+// Font size del texto superior que está encima de un form-field.
+.mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label {
+    font-size: 1.6rem !important;
+}
+
+// Estilos para el body del mat-expansion-panel.
+.mat-expansion-panel-body {
+    padding: 16px 24px 0px !important;
+}
+
+.mdc-text-field--filled .mdc-line-ripple::before {
+    border-bottom-width: 0px !important;
+}

@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$mat-theme-primary-palette: map-merge(
+    mat.$blue-palette, (501: #00236a, 201: #2b4fa1, 701: #00236a, 601: #ffffff, contrast: (501: #ffffff, 201: #ffffff, 701: #ffffff))
+);
+
+$mat-theme-primary: mat.define-palette($mat-theme-primary-palette, $default: 501, $lighter: 201, $darker: 701, $text: 601);
+
+$mat-theme-accent-palette: map-merge(
+    mat.$grey-palette, (501: #4d77b6, contrast: (501: #ffffff, A100: #ffffff, A200: #ffffff))
+);
+
+$mat-theme-accent: mat.define-palette($mat-theme-accent-palette, $default: 501, $lighter: A100, $darker: A200, $text: 600);
+
+$mat-theme-warn-palette: map-merge(
+    mat.$red-palette, (501: #781e27, 201: #ca4427, 701: #ca4427, 601: #781e27, contrast: (501: #ffffff, 201: #ffffff, 701: #ffffff))
+);
+
+$mat-theme-warn: mat.define-palette($mat-theme-warn-palette, $default: 501, $lighter: 201, $darker: 701, $text: 601);
+
+$mat-core-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $mat-theme-primary,
+            accent: $mat-theme-accent,
+            warn: $mat-theme-warn
+        )
+    )
+);
+
+@include mat.all-component-themes($mat-core-theme);
