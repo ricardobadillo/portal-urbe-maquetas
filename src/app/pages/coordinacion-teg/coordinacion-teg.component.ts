@@ -1,10 +1,14 @@
 // Angular.
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, } from '@angular/core';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { Title } from '@angular/platform-browser';
 
 // Modelos.
+import { BannerComponent } from '../../components/banner/banner.component';
 import { InfoSection } from '../../core/models/InfoSection';
 import { SubNavBarItem } from '../../core/models/sub-nav-bar';
+
 
 // Variables de entorno.
 import { environment } from '../../../environments/environment.development';
@@ -47,7 +51,10 @@ interface FileGroup{
 }
 
 @Component({
+ 
+  imports:[ MatExpansionModule, CommonModule, BannerComponent],
   selector: 'app-coordinacion-teg',
+  standalone: true,
   templateUrl: './coordinacion-teg.component.html',
   styleUrls: ['./coordinacion-teg.component.scss']
 })

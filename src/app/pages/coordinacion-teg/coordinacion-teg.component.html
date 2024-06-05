@@ -28,15 +28,15 @@
   </div>
 
   <!-- Acordeón con la información de la sección -->
-  <mat-accordion class="mat-accordion">
-    <mat-expansion-panel *ngFor="let item of infoSeccion; first as isFirst">
+  <mat-accordion class=" mat-accordion ">
+    <mat-expansion-panel @For=" let item of infoSeccion; first as isFirst ">
       <mat-expansion-panel-header>
         <mat-panel-title> {{ item.title }} </mat-panel-title>
 
       </mat-expansion-panel-header>
 
-      <ng-container *ngIf="item.multiLine">
-        <p *ngFor="let line of item.multiLine"> {{ line }} </p>
+      <ng-container @If=" item.multiLine ">
+        <p @for=" let line of item.multiLine "> {{ line }} </p>
       </ng-container>
     </mat-expansion-panel>
   </mat-accordion>
@@ -44,35 +44,35 @@
   <h2 class="title-download">Formatos de descarga</h2>
 
   <!-- Archivos descargables de cada facultad -->
-  <ng-container *ngFor="let career of careers">
+  <ng-container @for="let career of careers">
     <div class="card-container">
       <div class="card-header">
         <img [src]="career.backgroundImage" alt="Imagen de fondo">
         <h2> {{ career.title }} </h2>
         <h3> Requisitos </h3>
 
-        <p *ngFor="let line of career.infoMultiLine"> {{ line }} </p>
+        <p @for="let line of career.infoMultiLine"> {{ line }} </p>
       </div>
 
-      <mat-expansion-panel *ngFor="let fileGroup of career.fileGroups">
+      <mat-expansion-panel @for="let fileGroup of career.fileGroups">
         <mat-expansion-panel-header>
           <mat-panel-title> {{ fileGroup.title }} </mat-panel-title>
         </mat-expansion-panel-header>
 
-        <a *ngFor="let file of fileGroup.files" [href]="file.link" target="_blank">
+        <a @for="let file of fileGroup.files" [href]="file.link" target="_blank">
           <img [src]="file.icoUrl">
           <p> {{ file.name }} </p>
         </a>
 
         <!-- Lineas de investigacion -->
         <mat-accordion>
-          <mat-expansion-panel *ngFor=" let value of fileGroup.info">
+          <mat-expansion-panel @for=" let value of fileGroup.info">
             <mat-expansion-panel-header>
               <mat-panel-title> {{ value.Title }} </mat-panel-title>
             </mat-expansion-panel-header >
 
           <mat-accordion>
-            <ng-container *ngFor="let newValue of value.items">
+            <ng-container @for="let newValue of value.items">
               <mat-expansion-panel >
 
                 <mat-expansion-panel-header>
@@ -80,8 +80,8 @@
                 </mat-expansion-panel-header>
 
                 <mat-accordion>
-                  <ng-container *ngFor="let informacion of newValue.infovalue">
-                    <ul *ngFor="let nuevainformacion of informacion.value">
+                  <ng-container @for="let informacion of newValue.infovalue">
+                    <ul @for="let nuevainformacion of informacion.value">
                       <li (click)="nuevainformacion.expanded = !nuevainformacion.expanded">
                         {{ nuevainformacion.titleline }}
                       </li>
