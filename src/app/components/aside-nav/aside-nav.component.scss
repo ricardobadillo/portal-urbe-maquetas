@@ -1,0 +1,119 @@
+.aside-nav {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  padding: 0;
+  width: 100%;
+
+  &-title {
+    background-color: var(--dark-blue);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 1.5rem 2rem;
+    width: 100%;
+  }
+}
+
+.bulletin-container, .college-container {
+  width: 100%;
+  height: 100%;
+
+  img {
+    display: block;
+  }
+}
+
+.place-container {
+  padding-top: 1rem;
+  width: 100%;
+
+  .place-nav-list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 100%;
+  }
+
+  .place-list-item {
+    padding: 0rem 2rem;
+    width: 100%;
+  }
+
+  .place-title {
+    font-size: 1.5rem;
+    margin: 0rem 0rem 0.25rem;
+
+    @media (min-width: 869px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  .place-file-icon {
+    height: 100px;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.subnav-link-container {
+  background-color: #eeeeee;
+  width: 100%;
+
+  .parragraph {
+    font-family: "Poppins-Bold", sans-serif;
+    margin: 1rem 0rem 0rem;
+    padding: 0rem 1.5rem;
+  }
+
+  .file-icons {
+    height: 3rem;
+    margin-left: 1.5rem;
+    width: 3rem;
+  }
+
+  .nav-list {
+    margin: 0;
+    padding: 0;
+
+    .list-item, .list-item-time {
+      align-items: center;
+      display: flex;
+      padding: 1rem 1.5rem;
+    }
+
+    .item--hover {
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+      &:hover {
+        background-color: #dfdfdf;
+      }
+    }
+
+    a, span {
+      color: #000000;
+      font-family: 'Poppins-Regular', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .file-icon {
+      height: 3rem;
+      margin-right: 1.5rem;
+      width: 3rem;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  margin: 1rem 0rem;
+
+  .parragraph {
+    align-self: center;
+    margin: 0 ;
+  }
+}

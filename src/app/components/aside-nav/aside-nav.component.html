@@ -1,0 +1,106 @@
+<ng-container [ngSwitch]="type">
+
+  <!-- Aside dedicado a colegios asociados -->
+  <div class="aside-nav" *ngSwitchCase="'associatedCollege'">
+    <h2 class="aside-nav-title"> {{ title }} </h2>
+
+    <div class="college-container">
+      <a [href]="associatedCollege.path">
+        <img [src]="associatedCollege.image" alt="Colegio asociado">
+      </a>
+    </div>
+  </div>
+
+  <!-- Aside dedicado a boletines -->
+  <div class="aside-nav" *ngSwitchCase="'bulletin'">
+    <h2 class="aside-nav-title"> {{ title }} </h2>
+
+    <div class="bulletin-container">
+      <a [href]="bulletin.path">
+        <img [src]="bulletin.image" alt="Boletín informativo de una Escuela">
+      </a>
+    </div>
+  </div>
+
+  <!-- Aside dedicado a contactos -->
+  <div class="aside-nav" *ngSwitchCase="'contacts'">
+    <h2 class="aside-nav-title"> {{ title }} </h2>
+
+    <div class="subnav-link-container">
+      <ul class="nav-list">
+        <li class="list-item" *ngFor="let item of items">
+          <img *ngIf="item.imageUrl" class="file-icon" [src]="item.imageUrl" [alt]="'Icono del aside'"/>
+          <span>
+            {{ item.label }}
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Aside dedicado a descargas -->
+  <div class="aside-nav" *ngSwitchCase="'downloads'">
+    <h2 class="aside-nav-title"> {{ title }} </h2>
+
+    <div class="subnav-link-container">
+      <ul class="nav-list">
+        <li class="list-item item--hover" *ngFor="let item of items">
+          <img class="file-icon" [src]="item.imageUrl" [alt]="'Icono del aside'"/>
+          <a [href]="item.path" [download]="item.path" (click)="item.path ? '': $event.preventDefault()" target="_blank">
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Aside dedicado a espacios de estudio -->
+  <div class="aside-nav" *ngSwitchCase="'places'">
+    <h2 class="aside-nav-title"> {{ title }} </h2>
+
+    <div class="place-container">
+      <ul class="place-nav-list">
+        <li class="place-list-item" *ngFor="let item of items">
+          <h3 class="place-title"> {{ item.label }} </h3>
+          <img class="place-file-icon" [src]="item.imageUrl" [alt]="'Espacio de estudio'"/>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Aside dedicado a páginas a redireccionar -->
+  <div class="aside-nav" *ngSwitchCase="'links'">
+    <h2 class="aside-nav-title"> {{ title }} </h2>
+
+    <div class="subnav-link-container">
+      <ul class="nav-list">
+        <li class="list-item item--hover" *ngFor="let item of items">
+          <!-- En caso de que se dirija a una página dentro del mismo dominio -->
+          <a *ngIf="!determineLink(item.path); else externalLink" [routerLink]="item.path ? [item.path] : null"> {{ item.label }} </a>
+
+          <!-- En caso de que se dirija a una página en otro dominio -->
+          <ng-template #externalLink>
+            <a [href]="item.path" target="_blank"> {{ item.label }} </a>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Aside dedicado a horarios -->
+  <div class="aside-nav" *ngSwitchCase="'schedule'">
+    <h2 class="aside-nav-title"> {{ title }} </h2>
+
+    <div class="subnav-link-container" *ngFor="let item of items">
+      <div class="content">
+       <img *ngIf="item.imageUrl" class="file-icons" [src]="item.imageUrl" [alt]="'Icono del aside'"/>
+        <p class="parragraph"> {{ item.label }} </p>
+      </div>
+
+      <ul class="nav-list">
+        <li class="list-item-time" *ngFor="let subitem of item.labelSecondary"> {{ subitem }} </li>
+      </ul>
+    </div>
+  </div>
+
+</ng-container>
