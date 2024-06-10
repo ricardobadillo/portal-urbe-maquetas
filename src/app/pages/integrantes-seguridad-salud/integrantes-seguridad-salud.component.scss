@@ -1,0 +1,42 @@
+@import './../../../capital-humano-global-styles.scss';
+
+main {
+    @include main-container;
+    align-items: center;
+    h1 {
+        @include titles;
+        font-size: 28px
+    }
+}
+
+h2 {
+    @include subtitles;
+}
+
+h4 {
+    color: #840030;
+}
+
+.grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    display: grid;
+    grid-gap: 2em;
+    width: 65%;
+}
+
+.grid-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+h3 {
+    @include other-titles;
+}
+
+.person-image {
+    height: 150px;
+    width: 150px;
+    transform: translateY(15px);
+}

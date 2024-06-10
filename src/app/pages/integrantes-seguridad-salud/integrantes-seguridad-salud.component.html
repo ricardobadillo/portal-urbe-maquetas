@@ -1,0 +1,18 @@
+<app-banner [title]="'Integrantes del SSST'"></app-banner>
+
+<main>
+  <section class="grid-container">
+    <div *ngFor="let integrante of integrantes" class="grid-item">
+      <article>
+        <h3>{{ integrante.nombre }}</h3>
+        <p>{{ integrante.cargo }}</p>
+        <p>{{ integrante.dpto }}</p>
+        <p>
+          Correo:
+          <a href="mailto:{{ integrante.correo }}">{{ integrante.correo }}</a>
+        </p>
+      </article>
+      <img src="{{ integrante.url }}" alt="" class="person-image" />
+    </div>
+  </section>
+</main>

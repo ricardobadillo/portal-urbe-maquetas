@@ -1,0 +1,40 @@
+@import './../../../capital-humano-global-styles.scss';
+
+main {
+    @include main-container;
+    margin-bottom: 0;
+    margin-bottom: 3em;
+}
+
+h1{
+    @include titles;
+}
+
+h2{
+    @include subtitles;
+} 
+
+table {
+    border-spacing: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.headers{
+    tr{
+        background-color: var(--dark-blue);
+        color: #fafafa;
+    }
+
+    th{
+
+        padding: 0.5em;
+    }
+}
+
+.rows{
+    padding: 0.5em;
+    background-color: #fafafa;
+    border: 2px solid var(--dark-blue);
+}

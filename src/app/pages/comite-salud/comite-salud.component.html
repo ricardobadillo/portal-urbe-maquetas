@@ -1,0 +1,71 @@
+<app-banner [title]="'Comite de Seguridad Laboral'"></app-banner>
+
+<main>
+    <h2>Delegados de prevención</h2>
+    <section>
+        <table>
+            <thead class="headers">
+                <tr>
+                    <th>Nombre y Apellido</th>
+                    <th>Cédulad de identidad</th>
+                    <th>Cargo</th>
+                    <th>Departamento</th>
+                    <th>Fotografía</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let delegado of delegadosPrevencion">
+                    <td class="rows">
+                        {{ delegado.name }}
+                    </td>
+                    <td class="rows">
+                        {{ delegado.cedula }}
+                    </td>
+                    <td class="rows">
+                        {{ delegado.cargo }}
+                    </td>
+                    <td class="rows">
+                        {{ delegado.dpto }}
+                    </td>
+                    <td class="rows">
+                        <img src="{{ delegado.url }}" alt="" height="100" width="100" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <h2>Representantes del Patrono</h2>
+    <section>
+        <table>
+            <thead class="headers">
+                <tr>
+                    <th>Nombre y Apellido</th>
+                    <th>Cédulad de identidad</th>
+                    <th>Cargo</th>
+                    <th>Departamento</th>
+                    <th>Fotografía</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rep of representantesPatrono">
+                    <td class="rows">
+                        {{ rep.name }}
+                    </td>
+                    <td class="rows">
+                        {{ rep.cedula }}
+                    </td>
+                    <td class="rows">
+                        {{ rep.cargo }}
+                    </td>
+                    <td class="rows">
+                        {{ rep.dpto }}
+                    </td>
+                    <td class="rows">
+                        <img src="{{ rep.url }}" alt="" height="100" width="100" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
