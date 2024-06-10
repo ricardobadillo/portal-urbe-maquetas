@@ -28,64 +28,100 @@
   </div>
 
   <!-- Acordeón con la información de la sección -->
-  <mat-accordion class=" mat-accordion ">
-    <mat-expansion-panel @For=" let item of infoSeccion; first as isFirst ">
-      <mat-expansion-panel-header>
-        <mat-panel-title> {{ item.title }} </mat-panel-title>
 
-      </mat-expansion-panel-header>
 
-      <ng-container @If=" item.multiLine ">
-        <p @for=" let line of item.multiLine "> {{ line }} </p>
+        <mat-accordion class="mat-accordion">
+       <mat-expansion-panel> 
+
+        @For("let item of infoSeccion; first as isFirst"){
+          <mat-expansion-panel-header>
+            <mat-panel-tittle>{{item.title}}</mat-panel-tittle>
+        </mat-expansion-panel-header>
+
+        }
+
+
+      
+        @If("item.multiLine"){
+
+        }
+        @For("let line of item.multiLine"){
+          <p>{{line}}</p>
+
+        }
       </ng-container>
     </mat-expansion-panel>
   </mat-accordion>
 
+
   <h2 class="title-download">Formatos de descarga</h2>
 
   <!-- Archivos descargables de cada facultad -->
-  <ng-container @for="let career of careers">
-    <div class="card-container">
-      <div class="card-header">
-        <img [src]="career.backgroundImage" alt="Imagen de fondo">
-        <h2> {{ career.title }} </h2>
-        <h3> Requisitos </h3>
+  <ng-container>
+    @For("let career of careers"){
+      <div class="card-container">
+        <div class="card-header">
+          <img [src]="career.backgroundImage" alt="Imagen de fondo">
+          <h2> {{ career.title }} </h2>
+          <h3> Requisitos </h3>
+    }
+ 
 
-        <p @for="let line of career.infoMultiLine"> {{ line }} </p>
+    @For("let line of career.infoMultiLine"){
+      <p>{{line}}</p>
+    }
+      </div>
       </div>
 
-      <mat-expansion-panel @for="let fileGroup of career.fileGroups">
-        <mat-expansion-panel-header>
+    </mat-expansion-panel>
+        @For("let fileGroup of career.fileGroups"){
+          <mat-expansion-panel-header>
           <mat-panel-title> {{ fileGroup.title }} </mat-panel-title>
-        </mat-expansion-panel-header>
+          </mat-expansion-panel-header>
 
-        <a @for="let file of fileGroup.files" [href]="file.link" target="_blank">
-          <img [src]="file.icoUrl">
-          <p> {{ file.name }} </p>
-        </a>
+        }
+
+         <a href="file.link" target="_blank">
+          @For=("let file of fileGroup.files"){
+            <img [src]="file.icoUrl">
+            <p> {{ file.name }} </p>
+          }
+
+         </a>
+   
+
 
         <!-- Lineas de investigacion -->
         <mat-accordion>
-          <mat-expansion-panel @for=" let value of fileGroup.info">
-            <mat-expansion-panel-header>
+          <mat-expansion-panel>
+            @For("let value of fileGroup.info"){
+              <mat-expansion-panel-header>
               <mat-panel-title> {{ value.Title }} </mat-panel-title>
-            </mat-expansion-panel-header >
+              </mat-expansion-panel-header>
+            }
+   
 
           <mat-accordion>
-            <ng-container @for="let newValue of value.items">
-              <mat-expansion-panel >
+            <ng-container>
+              @For=("let newValue of value.items"){
+                <mat-expansion-panel ></mat-expansion-panel>
+
+              }
+              
 
                 <mat-expansion-panel-header>
                   <mat-panel-title>{{ newValue.newtitle }}</mat-panel-title>
                 </mat-expansion-panel-header>
 
                 <mat-accordion>
-                  <ng-container @for="let informacion of newValue.infovalue">
-                    <ul @for="let nuevainformacion of informacion.value">
-                      <li (click)="nuevainformacion.expanded = !nuevainformacion.expanded">
-                        {{ nuevainformacion.titleline }}
-                      </li>
-
+                  <ng-container> @For=("let informacion of newValue.infovalue"){
+                    }
+                    <ul>
+                      @For("let nuevainformacion of informacion.value"){
+                        <li (click)="nuevainformacion.expanded = !nuevainformacion.expanded">
+                          {{ nuevainformacion.titleline }}
+                        </li>
+                      }
                       <mat-expansion-panel [expanded]="nuevainformacion.expanded">
                         <p>{{ nuevainformacion.content }}</p>
                         <p>{{nuevainformacion.tutores}}</p>
@@ -96,7 +132,6 @@
                 </mat-expansion-panel>
                 </ng-container>
             </mat-accordion>
-
           </mat-expansion-panel>
         </mat-accordion>
       </mat-expansion-panel>
