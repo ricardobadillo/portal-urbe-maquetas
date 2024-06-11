@@ -1,5 +1,4 @@
 // Angular.
-import { CommonModule } from '@angular/common';
 import { Component, OnInit, } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Title } from '@angular/platform-browser';

@@ -1,0 +1,50 @@
+@import "./../../../capital-humano-global-styles.scss";
+
+main{
+    @include main-container;
+    align-items: center;
+  }
+
+  h1{
+    @include titles;
+  }
+
+h2{
+  @include subtitles;
+}
+
+.grid-container{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    display: grid;
+    grid-gap: 2em;
+    width: 70%;
+}
+
+.grid-image{
+    height: 35%;
+    width: 90%;
+    border-radius: 1em;
+    margin: 0 auto;
+}
+
+.info-container{
+    text-align: left;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.end-text{
+    background-color: #840030;
+    color: #fafafa;
+    border-radius: 10px;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    font-style: italic;
+    font-weight: bold;
+    text-indent: 2.5em;
+}
+
+h3{
+  @include other-titles;
+} 

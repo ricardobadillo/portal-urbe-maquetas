@@ -1,0 +1,75 @@
+@import './../../../capital-humano-global-styles.scss';
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 1.5em;
+    margin-bottom: 3em;
+
+    @media screen and (max-width: 768px) {
+        padding-top: 1.5em;
+        padding-bottom: 3em;
+        margin: 0 auto;
+    }
+}
+    h1 {
+        @include titles;
+
+        @media screen and (max-width: 768px) {
+            width: 80%;
+        }
+    }
+
+h2 {
+    @include subtitles;
+    width: 55%;
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
+}
+
+.text-container {
+    @include text-container;
+    text-align: justify;
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+    }
+
+    li {
+        list-style: disc;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.info-container {
+    @include info-container;
+}
+
+.nav-btn {
+    background-image: linear-gradient(to bottom, #fafafa, #e8e8e8);
+    color: var(--dark-blue);
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    height: 3em;
+    width: 12em;
+    font-size: 1.5rem;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    @media screen and (max-width: 768px) {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.nav-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
