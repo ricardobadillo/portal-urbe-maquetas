@@ -79,15 +79,18 @@ section{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 350px;
     min-height: 150px;
     min-width: 288px;
     padding: 1rem;
     width: 90%;
 
-    @media (min-width: 769px) {
-        display: flex;
+    @media (min-width: 769px) and (max-width: 1400px) {
         width: 60%;
+    }
+
+    @media (min-width: 1401px){
+        max-width: 300px;
     }
 }
 
@@ -101,8 +104,12 @@ section{
     font-size: 1.5rem;
     padding: 1rem;
 
-    @media (min-width: 469px) {
+    @media (min-width: 469px) and (max-width: 1400px) {
         font-size: 2rem;
+    }
+
+    @media (min-width: 1401px) {
+        font-size: 1.5rem;
     }
 }
 
@@ -112,4 +119,8 @@ section{
     min-height: 120px;
     min-width: 120px;
     width: 50%;
+}
+
+.card-item-content {
+    margin: auto;
 }
