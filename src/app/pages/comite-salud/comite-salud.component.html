@@ -1,71 +1,49 @@
 <app-banner [title]="'Comite de Seguridad Laboral'"></app-banner>
 
-<main>
-    <h2>Delegados de prevención</h2>
-    <section>
-        <table>
-            <thead class="headers">
-                <tr>
-                    <th>Nombre y Apellido</th>
-                    <th>Cédulad de identidad</th>
-                    <th>Cargo</th>
-                    <th>Departamento</th>
-                    <th>Fotografía</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let delegado of delegadosPrevencion">
-                    <td class="rows">
-                        {{ delegado.name }}
-                    </td>
-                    <td class="rows">
-                        {{ delegado.cedula }}
-                    </td>
-                    <td class="rows">
-                        {{ delegado.cargo }}
-                    </td>
-                    <td class="rows">
-                        {{ delegado.dpto }}
-                    </td>
-                    <td class="rows">
-                        <img src="{{ delegado.url }}" alt="" height="100" width="100" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+<div class="page-wrapper">
+    <main>
+        <section>
+            <h2>Delegados de prevención</h2>
 
-    <h2>Representantes del Patrono</h2>
-    <section>
-        <table>
-            <thead class="headers">
-                <tr>
-                    <th>Nombre y Apellido</th>
-                    <th>Cédulad de identidad</th>
-                    <th>Cargo</th>
-                    <th>Departamento</th>
-                    <th>Fotografía</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let rep of representantesPatrono">
-                    <td class="rows">
-                        {{ rep.name }}
-                    </td>
-                    <td class="rows">
-                        {{ rep.cedula }}
-                    </td>
-                    <td class="rows">
-                        {{ rep.cargo }}
-                    </td>
-                    <td class="rows">
-                        {{ rep.dpto }}
-                    </td>
-                    <td class="rows">
-                        <img src="{{ rep.url }}" alt="" height="100" width="100" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-</main>
+            <div class="cards-container">
+                <div *ngFor="let delegado of delegadosPrevencion" class="card-item">
+                    <div class="card-item-header">
+                        <div class="card-item-title">
+                            <h3> {{ delegado.name }} </h3>
+                            <p> CI: {{ delegado.cedula }} </p>
+                        </div>
+                        
+                        <img class="card-item-image" src="{{ delegado.url }}" alt="Foto de delegado"/>
+                    </div>
+
+                    <div class="card-item-content">
+                        <p> <b>Cargo:</b> {{ delegado.cargo }} </p>
+                        <p> <b>Departamento:</b> {{ delegado.dpto }} </p>
+                    </div>
+                </div>
+            </div>
+        </section><br>
+        
+        <section>
+            <h2>Representantes del Patrono</h2>
+
+            <div class="cards-container">
+                <div *ngFor="let rep of representantesPatrono" class="card-item">
+                    <div class="card-item-header">
+                        <div class="card-item-title">
+                            <h3> {{ rep.name }} </h3>
+                            <p> CI: {{ rep.cedula }} </p>
+                        </div>
+                        
+                        <img class="card-item-image" src="{{ rep.url }}" alt="Foto de delegado"/>
+                    </div>
+
+                    <div class="card-item-content">
+                        <p> <b>Cargo:</b> {{ rep.cargo }} </p>
+                        <p> <b>Departamento:</b> {{ rep.dpto }} </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main> 
+</div>

@@ -1,13 +1,16 @@
 // Angular.
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 // Variables de entorno.
-import { environment } from '../../../../../../environments/environment';
-
+import { BannerComponent } from '../../components/banner/banner.component';
+import { environment } from '../../../environments/environment.development';
 
 
 @Component({
   selector: 'app-comite-salud',
+  standalone: true,
+  imports: [BannerComponent, NgFor],
   templateUrl: './comite-salud.component.html',
   styleUrls: ['./comite-salud.component.scss']
 })
@@ -15,7 +18,7 @@ export class ComiteSaludComponent {
 
   private CDN = environment.urlBaseCDN;
 
-  delegadosPrevencion = [
+  public delegadosPrevencion = [
     {
       name: "Melvis Piña",
       cedula: "5.116.141",
@@ -46,7 +49,7 @@ export class ComiteSaludComponent {
     },
   ];
 
-  representantesPatrono = [
+  public representantesPatrono = [
     {
       name: "Liliam Castro",
       cedula: "6.562.282",
