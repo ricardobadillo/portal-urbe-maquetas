@@ -1,5 +1,5 @@
 @use "../../../../../scss/components/navbar" as *;
-@use "../../../../../scss/layout/index" as *;
+@use "../../../scss/layout/index" as *;
 
 .page-wrapper {
   @include container;

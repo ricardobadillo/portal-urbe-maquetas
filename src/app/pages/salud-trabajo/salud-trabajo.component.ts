@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
-import { environment } from './../../../../../../environments/environment';
+
+import { Component, } from '@angular/core';
+import { environment } from '../../../environments/environment.development';
+import { BannerComponent } from '../../components/banner/banner.component';
 
 @Component({
+  imports: [BannerComponent],
+  standalone:true,
   selector: 'app-salud-trabajo',
   templateUrl: './salud-trabajo.component.html',
   styleUrls: ['./salud-trabajo.component.scss']

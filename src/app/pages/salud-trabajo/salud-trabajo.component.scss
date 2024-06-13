@@ -1,4 +1,5 @@
-@import "./../../../capital-humano-global-styles.scss";
+@import "../capital-humano-global-styles.scss";
+
 
 main{
     @include main-container;
@@ -9,42 +10,52 @@ main{
     @include titles;
   }
 
-h2{
+h3{
   @include subtitles;
+  font-size: 25px;
+
+}
+p{
+  text-align: justify;
 }
 
-.grid-container{
+/*.grid-container{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     display: grid;
     grid-gap: 2em;
     width: 70%;
+    text-align: justify;
 }
-
+*/
 .grid-image{
-    height: 35%;
-    width: 90%;
-    border-radius: 1em;
-    margin: 0 auto;
+  border-radius: 1em;
+  display: flex;
+  height: 35%;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .info-container{
+    margin: 0 auto;
     text-align: left;
     width: 70%;
-    margin: 0 auto;
+
 }
 
 .end-text{
-    background-color: #840030;
-    color: #fafafa;
+    background-color: var(--dark-blue);
     border-radius: 10px;
-    padding: 1.5em;
-    margin-bottom: 1.5em;
+    color: #fafafa;
     font-style: italic;
-    font-weight: bold;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    text-align: justify
     text-indent: 2.5em;
 }
-
+/*
 h3{
   @include other-titles;
 } 
+  */
