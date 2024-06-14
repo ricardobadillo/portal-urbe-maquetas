@@ -1,0 +1,20 @@
+@import './../../../capital-humano-global-styles.scss';
+
+main {
+    @include main-container;
+    transform: translateY(-2em);    
+    align-items: center;
+}
+
+h1{
+    @include titles;
+}
+
+p{
+    @include info-container;
+}
+
+.images{
+    height: 180px;
+    width: 240px;
+}
