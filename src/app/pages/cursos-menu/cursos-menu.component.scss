@@ -1,0 +1,30 @@
+@import './../../../capital-humano-global-styles.scss';
+
+main {
+  @include main-container;
+    margin-top: 1.5em;    
+}
+    article{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            grid-column-gap: 15px;
+            grid-row-gap: 0px;
+            margin: 0 auto;
+            width: 85%;
+    }
+
+    .item{
+      @include item;
+    }
+
+.images{
+  border-radius: 15px;
+    height: 70%;
+    transform: translateY(10px);
+    width: 70%;
+}
+
+h3{
+  @include other-titles;
+} 
