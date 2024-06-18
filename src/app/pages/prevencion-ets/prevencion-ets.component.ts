@@ -4,8 +4,8 @@ import { NgFor, NgStyle } from '@angular/common';
 import { BannerComponent } from '../../components/banner/banner.component';
 
 @Component({
-  imports:[NgFor, BannerComponent, NgStyle],
-  standalone:true,
+  imports: [NgFor, BannerComponent, NgStyle],
+  standalone: true,
   selector: 'app-prevencion-ets',
   templateUrl: './prevencion-ets.component.html',
   styleUrls: ['./prevencion-ets.component.scss']

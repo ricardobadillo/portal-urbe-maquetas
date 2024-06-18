@@ -1,10 +1,10 @@
 <app-banner [title]="'Cursos y Talleres'"></app-banner>
 
-<main>    
-      <article>
-        <div class="item" *ngFor="let curso of cursos" [routerLink]="curso.redir">
-            <img [src]="curso.url" class="images">
-            <h3>{{ curso.name }}</h3>
-        </div>
-      </article>
-    </main>  
+<main>
+  <article>
+    <div class="item" *ngFor="let curso of cursos" [routerLink]="curso.redir">
+      <img [src]="curso.url" class="images">
+      <h3>{{ curso.name }}</h3>
+    </div>
+  </article>
+</main>

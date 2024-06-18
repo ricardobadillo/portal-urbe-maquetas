@@ -1,0 +1,306 @@
+@use "../../../scss/components/navbar" as *;
+@use "../../../scss/layout/index" as *;
+@import url("../capital-humano/capital-humano-global-styles.scss");
+
+.page-wrapper {
+    @include container;
+
+    @media (min-width: 869px) {
+        flex-direction: row;
+    }
+}
+
+aside {
+  @include aside-container(869px);
+
+  .aside__header {
+    background-color: var(--dark-blue);
+    color: #fff;
+    display: block;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+  }
+
+  .aside__content {
+    background-color: #eeeeee;
+    line-height: 2;
+    padding: 1rem 1.5rem;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+main {
+    margin-bottom: 3rem;
+
+    @media (min-width: 869px){
+        margin-right: 3rem;
+        max-width: 68%;
+    }
+
+    .main-content {
+        margin-bottom: 5rem;
+        width: 70%
+    }
+}
+
+%other-titles {
+    color: #00246A;
+    font: Poppins-Regular;
+    margin-bottom: 0.5em;
+}
+
+// main {
+//     min-height: 100vh;
+//     display: grid;
+//     place-content: center;
+//     grid-template-columns: 1fr 30%;
+//     grid-template-rows: 1fr;
+//     grid-gap: 1.5em;
+//     margin-top: 3em;
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 95%;
+
+//     @media screen and (min-width: 1023px) and (max-width: 1269px) {
+//         margin-top: 3em;
+//         grid-gap: 0.5em;
+//         grid-template-columns: 1fr;
+//     }
+
+//     @media (min-width: 320px) and (max-width: 1023px) {
+//         grid-template-columns: 1fr;
+//         margin: 0;
+//         grid-gap: 0;
+//     }
+// }
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    // padding-left: 2em;
+}
+
+h1 {
+    color: var(--dark-blue);
+    font-size: 32px;
+    font-weight: 850;
+    margin-bottom: 0;
+}
+
+.student-container {
+    height: 300px;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+        height: 25vh;
+        // margin-top: 1.5em;
+        margin-bottom: 1em;
+    }
+}
+
+.banner-student-container {
+    align-items: center;
+    background-image: url("https://cdn.urbe.edu/portal-urbe/images/rrhh/banner-ch.jpg");
+    background-position: 12.5% 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    height: 100%;
+    width: 100%;
+    // max-width: 900px;
+}
+
+.slider-container {
+    box-shadow: var(--box-shadow);
+    margin: 3rem 0rem;
+    width: 100%;
+
+    // @media screen and (min-width: 320px) and (max-width: 767px) {
+    //     margin: 0 auto;
+    //     width: 85vw;
+    // }
+
+
+    // @media (min-width: 766px) {
+        border-radius: 12px;
+        margin: 0 auto;
+    // }
+}
+
+.calendar-text {
+    padding-bottom: 1em;
+
+    @media (min-width: 320px) and (max-width: 1028px) {
+        display: none;
+    }
+
+    h2 {
+        @extend %other-titles;
+        font-size: 32px;
+        font-weight: 850;
+    }
+
+    h3 {
+        @extend %other-titles;
+    }
+}
+
+.calendar-container {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 3em;
+
+    @media (min-width: 320px) and (max-width: 1028px) {
+        display: none;
+    }
+}
+
+.responsive-navigation {
+    padding-top: 1em;
+    margin: 0 auto;
+
+    @media screen and (min-width: 1269px) {
+        display: none;
+    }
+}
+
+// aside {
+//     margin: 0 auto;
+//     overflow-x: hidden;
+//     gap: 1em;
+
+//     @media screen and (max-width: 1269px) {
+//         display: none;
+//     }
+// }
+
+// .aside-navigation-container{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+
+.birthday-container {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 1em;
+    background-color: #e6e6e6;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+
+    @media screen and (min-width: 320px) and (max-width: 1023px) {
+        padding: 0.5em
+    }
+
+    h2 {
+        @extend %other-titles;
+        font-size: 32px;
+        font-weight: 850;
+    }
+
+    h3{
+        margin: 0;
+    }
+}
+
+.people-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    grid-gap: 0.5em;
+    grid-row-gap: 1.5em;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1022px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+// .birthday-item {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin-bottom: 1.5em;
+
+//     .names {
+//         h3 {
+//             margin: 0 auto;
+//             text-align: center;
+//         }
+//     }
+
+//     .texto {
+//         font-size: 18px;
+//         font-weight: 500;
+//         text-align: center;
+//         height: 20%;
+//         width: 250px;
+//         color: #252525;
+
+//         @media screen and (min-width: 765px) {
+//             font-size: 16px;
+//             height: 50px;
+//             width: 150px;
+//             margin: 0;
+//             overflow-wrap: break-word;
+//         }
+
+//         @media screen and (min-width: 1022px) {
+//             width: 150px;
+//             font-size: 16px;
+//         }
+//     }
+// }
+
+.imag {
+    top: 0;
+    height: 120px;
+    width: 120px;
+}
+
+.admision-container {
+    background-color: var(--dark-blue);
+    padding: 2rem;
+    margin: 3rem auto;
+
+    // @media (min-width: 1023px) {
+        margin-top: 0;
+    // }
+
+    h2 {
+        color: #ffffff;
+        font-family: "Poppins-Bold", sans-serif;
+        font-size: 2.8rem;
+        text-decoration: underline;
+        text-decoration-color: #fafafa;
+        font-weight: 600;
+        margin: 0rem 0rem 1rem;
+        text-align: center;
+    }
+
+    p {
+        color: #ffffff;
+        font-size: 1.6rem;
+        margin: 0rem 0rem 2rem;
+    }
+}
+
+.sisalud {
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}

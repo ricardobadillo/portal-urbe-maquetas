@@ -1,0 +1,49 @@
+<app-banner [title]="'Comite de Seguridad Laboral'"></app-banner>
+
+<div class="page-wrapper">
+    <main>
+        <section>
+            <h2>Delegados de prevención</h2>
+
+            <div class="cards-container">
+                <div *ngFor="let delegado of delegadosPrevencion" class="card-item">
+                    <div class="card-item-header">
+                        <div class="card-item-title">
+                            <h3> {{ delegado.name }} </h3>
+                            <p> CI: {{ delegado.cedula }} </p>
+                        </div>
+                        
+                        <img class="card-item-image" src="{{ delegado.url }}" alt="Foto de delegado"/>
+                    </div>
+
+                    <div class="card-item-content">
+                        <p> <b>Cargo:</b> {{ delegado.cargo }} </p>
+                        <p> <b>Departamento:</b> {{ delegado.dpto }} </p>
+                    </div>
+                </div>
+            </div>
+        </section><br>
+        
+        <section>
+            <h2>Representantes del Patrono</h2>
+
+            <div class="cards-container">
+                <div *ngFor="let rep of representantesPatrono" class="card-item">
+                    <div class="card-item-header">
+                        <div class="card-item-title">
+                            <h3> {{ rep.name }} </h3>
+                            <p> CI: {{ rep.cedula }} </p>
+                        </div>
+                        
+                        <img class="card-item-image" src="{{ rep.url }}" alt="Foto de delegado"/>
+                    </div>
+
+                    <div class="card-item-content">
+                        <p> <b>Cargo:</b> {{ rep.cargo }} </p>
+                        <p> <b>Departamento:</b> {{ rep.dpto }} </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main> 
+</div>

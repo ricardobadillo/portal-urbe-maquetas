@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-curso-cultura-salud',
-  imports:[ BannerComponent, NgFor, RouterLink],
+  imports: [BannerComponent, NgFor, RouterLink],
   standalone: true,
   templateUrl: './curso-cultura-salud.component.html',
   styleUrls: ['./curso-cultura-salud.component.scss']

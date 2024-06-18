@@ -1,0 +1,38 @@
+<div class="slider-wrapper" [ngStyle]="containerSliderStyles">
+    <div class="keen-slider" #sliderRef>
+        <div class="keen-slider__track">
+            <div class="keen-slider__slide" *ngFor="let slide of slides">
+                <div class="slide" *ngIf="!determinateProtocolLink(slide.route)">
+                    <a class="slide-link" [routerLink]="slide.route">
+                        <img class="slide-image" [src]="slide.icon" alt="Icono del slider">
+                    </a>
+                </div>
+                <div class="slide" *ngIf="determinateProtocolLink(slide.route)" >
+                    <a class="slide-link" [href]="slide.route" target="_blank">
+                        <img class="slide-image" [src]="slide.icon" alt="Icono del slider">
+                    </a>
+                </div>
+                <div class="slide-text">
+                    <p> {{ slide.text }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-icon 
+        *ngIf="showButtons"
+        [ngClass]="'arrow arrow--left ' + (currentSlide === 0 ? 'arrow--disabled' : '')" 
+        (click)="slider?.prev()"
+    >
+        keyboard_arrow_left
+    </mat-icon>
+
+    <mat-icon 
+        color="primary" 
+        *ngIf="slider && showButtons" 
+        [ngClass]="'arrow arrow--right ' + (slider.track.details.slides.length - 2 === currentSlide ? 'arrow--disabled' : '')" 
+        (click)="slider.next()"
+    >
+        keyboard_arrow_right
+    </mat-icon>
+</div>
