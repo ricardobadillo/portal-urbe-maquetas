@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { environment } from '../../../../../../environments/environment';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
+  imports:[],
+  standalone:true,
   selector: 'app-taller-primeros-auxilios',
   templateUrl: './taller-primeros-auxilios.component.html',
   styleUrls: ['./taller-primeros-auxilios.component.scss']

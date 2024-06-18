@@ -1,10 +1,13 @@
-@import './../../../capital-humano-global-styles.scss';
+@import '../capital-humano-global-styles.scss';
 
 main {
     @include main-container;
-    transform: translateY(-4em);    
     align-items: center;
+    transform: translateY(-4em);    
 } 
+.prevencion{
+    text-align: justify
+}
 
 h1{
     @include titles;

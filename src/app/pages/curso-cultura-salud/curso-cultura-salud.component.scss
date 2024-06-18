@@ -1,4 +1,4 @@
-@import './../../../capital-humano-global-styles.scss';
+@import '../capital-humano-global-styles.scss';
 
 main {
     @include main-container;
@@ -12,9 +12,11 @@ h1{
 
 p{
     @include info-container;
+    text-align: justify;
 }
 
 .images{
     height: 180px;
     width: 240px;
+    border-radius: 5rem;
 }

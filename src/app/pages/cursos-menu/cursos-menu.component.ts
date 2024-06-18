@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-import { environment } from '../../../../../../environments/environment';
+import { environment } from '../../../environments/environment.development';
+import { NgFor, NgStyle } from '@angular/common';
+import { BannerComponent } from '../../components/banner/banner.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
+  imports:[ NgFor, BannerComponent, NgStyle, RouterLink],
+  standalone:true,
   selector: 'app-cursos-menu',
   templateUrl: './cursos-menu.component.html',
   styleUrls: ['./cursos-menu.component.scss']
