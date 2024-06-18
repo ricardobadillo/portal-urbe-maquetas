@@ -1,0 +1,119 @@
+.grid-cards {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  justify-content: center;
+}
+
+.card-container {
+  background: rgba(var(--gray-light-rgb), 0.6);
+  border: 0.2rem var(--dark-blue) solid;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  transition: all ease-in 200ms;
+  width: 90%;
+
+  @media (min-width: 869px) {
+    width: 100%;
+  }
+
+  &::before{
+    background: var(--white-1);
+    content: '';
+    display: block;
+    height: 1rem;
+    position: absolute;
+    top: -0.5rem;
+    width: calc(18rem + 1rem);
+  }
+
+  h3 {
+    background: var(--dark-blue);
+    border-radius: 2rem;
+    color: #ffffff;
+    height: auto;
+    margin: 0;
+    padding: 0.5rem 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: -1.75rem;
+    width: 18rem;
+  }
+
+  .matters-container {
+    border-radius: 0.5rem;
+    overflow: auto;
+    padding: 3rem 0.75rem;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .matter {
+    align-self: center;
+    border-bottom: 0.25rem rgba(var(--gray-dark-rgb), 0.05) solid;
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0.5rem 0.75rem;
+    position: relative;
+    transition: all ease-in 250ms;
+
+    p {
+      margin: 0rem;
+      width: 90%;
+    }
+
+    &::before {
+      aspect-ratio: 1/1;
+      background: var(--dark-blue);
+      border-radius: 100%;
+      content: '';
+      display: block;
+      left: -2rem;
+      position: absolute;
+      transition: all ease-in 250ms;
+      top: calc(50% - 0.3rem);
+      width: 0.85rem;
+    }
+
+    &:hover {
+      background: rgba(var(--gray-dark-rgb), 0.1);
+      color: var(--dark-blue);
+      cursor: pointer;
+      padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+
+      &::before {
+        left: 0.6rem;
+      }
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+.subject {
+  p {
+    margin: 0;
+    margin-left: 2rem;
+  }
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    text-transform: uppercase;
+  }
+}

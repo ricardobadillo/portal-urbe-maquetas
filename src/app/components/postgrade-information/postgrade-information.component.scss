@@ -1,0 +1,245 @@
+@use "../../../scss/layout" as *;
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: -2rem;
+  margin-bottom: 0rem;
+}
+
+a {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 4rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 30rem;
+  margin: 3rem auto 3rem;
+}
+
+.page-container {
+  @include container();
+
+  width: 100%;
+}
+
+.container {
+  width: 95%;
+  margin: 4rem auto 2rem auto;
+
+  @media screen and (min-width: 1024px) {
+    width: 90%;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main__content {
+    @media screen and (min-width: 1024px) {
+      margin-top: 2rem;
+    }
+
+    .cards {
+      display: flex;
+      width: 90%;
+      max-width: 750px;
+      margin: 0 auto;
+      justify-content: center;
+      margin-bottom: 3rem;
+      font-size: 1.4rem;
+      @media screen and (min-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.subitem {
+  margin-bottom: 3rem;
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 100;
+    margin-bottom: 0;
+  }
+}
+
+.main-grid-container {
+  @include container();
+
+  @media (min-width: 1024px) {
+    display: grid;
+    gap: 4rem;
+    grid-template-areas:
+      "article article  article aside"
+      "pensum pensum pensum . ";
+  }
+
+  .article {
+    grid-area: article;
+  }
+
+  .pensum {
+    grid-area: pensum;
+  }
+}
+.first-article {
+  text-align: center;
+  @media screen and (min-width: 1200px) {
+    text-align: left;
+  }
+}
+.descriptions {
+  margin-bottom: 3rem;
+
+  p {
+    text-align: justify;
+    font-size: 1.8rem;
+  }
+}
+
+.title {
+  display: grid;
+  margin-top: 2rem;
+  justify-items: center;
+
+  @media screen and (min-width: 1200px) {
+    justify-items: normal;
+  }
+  h2 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+
+  .get-title {
+    $TitleWidth: calc(100% - 3rem);
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 20rem;
+    height: auto;
+    border: 0.2rem var(--dark-blue) solid;
+    background: var(--white-1);
+    border-radius: 1rem;
+    position: relative;
+    transition: all ease-in 200ms;
+    padding: 0.5rem 0;
+
+    @media (max-width: 1200px) {
+      margin-bottom: 5rem;
+    }
+
+    h3 {
+      place-items: center;
+      font-weight: 600;
+      margin: 0;
+    }
+    h2 {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background: var(--white-1);
+      height: 0.2rem;
+      width: calc($TitleWidth + 1rem);
+      position: absolute;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 5rem;
+      height: 0.2rem;
+      padding: 0.25rem;
+      position: absolute;
+      bottom: -0.2rem;
+      left: calc(50% - 2.8rem);
+      z-index: 0;
+      background: var(--white-1);
+    }
+
+    .dots-icons-bottom {
+      display: flex;
+      position: absolute;
+      left: calc(50% - 2rem);
+      bottom: -0.6rem;
+      z-index: 1;
+      justify-content: space-between;
+      align-items: center;
+      width: 4rem;
+
+      span {
+        display: block;
+        width: 1rem;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        background-color: var(--dark-blue);
+
+        &:nth-child(2) {
+          width: 0.5rem;
+          height: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+  // Aside.
+  .rightnav {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 300px;
+    row-gap: 3rem;
+    width: 100%;
+  }
+
+.information-page-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  h2 {
+    color: var(--blue);
+    font-size: 2.4rem;
+    margin: 0rem 0rem 0.5rem;
+    text-transform: uppercase;
+
+    @media (min-width: 869px) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    text-align: left;
+
+    @media (min-width: 869px) {
+      font-size: 1.7rem;
+      text-align: justify;
+    }
+  }
+
+  article p:first-of-type {
+    margin-top: 0rem;
+  }
+}
+
+.card{
+  margin-bottom: 2rem;
+}

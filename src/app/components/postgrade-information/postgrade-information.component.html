@@ -1,0 +1,251 @@
+<div class="page-container">
+  <main class="container main-grid-container">
+    <section class="main__content article">
+      <h2 *ngIf="careersInformation.description">
+        {{ careersInformation.title }}
+      </h2>
+      <div class="descriptions">
+        <article class="first-article">
+          <h2 *ngIf="!careersInformation.description">
+            {{ careersInformation.title }}
+          </h2>
+        </article>
+        <article *ngIf="!careersInformation.purpose && careersInformation.imageUrl">
+          <div class="title" *ngIf="careersInformation.modality">
+            <div class="get-title">
+              <h2>Modalidad de estudio:</h2>
+              <h3>{{ careersInformation.modality }}</h3>
+
+              <span class="dots-icons-bottom">
+                <span></span><span></span><span></span>
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="information-page-container">
+        <article *ngIf="careersInformation.description">
+          <div class="content">
+            <h2>Proposito</h2>
+            <p *ngFor="let meaning of careersInformation.description">
+              {{ meaning }}
+            </p>
+          </div>
+        </article>
+        <article *ngIf="careersInformation.purpose">
+          <div class="content">
+            <h2>Proposito</h2>
+            <p *ngFor="let meaning of careersInformation.purpose">
+              {{ meaning }}
+            </p>
+          </div>
+        </article>
+
+        <article *ngIf="careersInformation.meaning || careersInformation.mision">
+          <div class="content" *ngIf="careersInformation.meaning">
+            <h2 *ngIf="careersInformation.type !== 'maestrias'">
+              Proposito de la especialización
+            </h2>
+            <h2 *ngIf="careersInformation.type === 'maestrias'">
+              Proposito de la maestría
+            </h2>
+            <p *ngFor="let meaning of careersInformation.meaning">
+              {{ meaning }}
+            </p>
+          </div>
+          <div class="content" *ngIf="careersInformation.mision">
+            <h2>Misión</h2>
+
+            <p *ngFor="let meaning of careersInformation.mision">
+              {{ meaning }}
+            </p>
+            <h2 *ngIf="careersInformation.goals">Objetivos</h2>
+            <p *ngFor="let profile of careersInformation.goals">
+              {{ profile }}
+            </p>
+          </div>
+        </article>
+        <article *ngIf="careersInformation.purposeProfesional">
+          <h2>Proposito</h2>
+          <p *ngFor="let market of careersInformation.purposeProfesional">
+            {{ market }}
+          </p>
+
+          <h2>Perfil de ingreso</h2>
+          <p *ngFor="let profile of careersInformation.professionalProfile">
+            {{ profile }}
+          </p>
+
+          <div class="subitem">
+            <h2>Requisitos de ingreso:</h2>
+            <h3 *ngFor="let profile of careersInformation.entryRequirements">
+              {{ profile }}
+            </h3>
+          </div>
+
+          <h2>Certificación</h2>
+          <p *ngFor="let market of careersInformation.certification">
+            {{ market }}
+          </p>
+        </article>
+        <article *ngIf="careersInformation.specificAspects">
+          <h2>Aspectos específicos de la CEAC</h2>
+          <p *ngFor="let market of careersInformation.specificAspects">
+            {{ market }}
+          </p>
+        </article>
+        <article *ngIf="careersInformation.vision">
+          <h2>Visión</h2>
+          <p *ngFor="let meaning of careersInformation.vision">
+            {{ meaning }}
+          </p>
+        </article>
+
+        <article *ngIf="careersInformation.legalBases">
+          <h2>Bases legales</h2>
+          <p *ngFor="let meaning of careersInformation.legalBases">
+            {{ meaning }}
+          </p>
+        </article>
+
+        <article *ngIf="!careersInformation.purposeProfesional">
+          <h2>Perfil de ingreso</h2>
+          <p *ngFor="let profile of careersInformation.professionalProfile">
+            {{ profile }}
+          </p>
+
+          <div class="subitem">
+            <h2>Requisitos de ingreso:</h2>
+            <h3 *ngFor="let profile of careersInformation.entryRequirements">
+              {{ profile }}
+            </h3>
+          </div>
+
+          <div class="subitem" *ngIf="careersInformation.critaria">
+            <h2>Criterios y/o normas para la selección de aspirantes</h2>
+            <h3 *ngFor="let profile of careersInformation.critaria">
+              {{ profile }}
+            </h3>
+          </div>
+
+          <div class="subitem" *ngIf="careersInformation.deliveries">
+            <h2>Entregar los siguientes recaudos:</h2>
+            <h3 *ngFor="let profile of careersInformation.deliveries">
+              {{ profile }}
+            </h3>
+          </div>
+          <div class="subitem" *ngIf="careersInformation.otherCountries">
+            <h2>Los participantes de otros países deberán consignar:</h2>
+            <h3 *ngFor="let profile of careersInformation.otherCountries">
+              {{ profile }}
+            </h3>
+          </div>
+
+          <div *ngIf="careersInformation.academicRegime">
+            <h2>Régimen Académico</h2>
+            <p *ngFor="let market of careersInformation.academicRegime">
+              {{ market }}
+            </p>
+          </div>
+        </article>
+
+        <article *ngIf="careersInformation.purpose">
+          <h2>Perfil de egreso</h2>
+          <p *ngFor="
+              let profile of careersInformation.professionalProfileGraduate
+            ">
+            {{ profile }}
+          </p>
+
+          <div class="subitem">
+            <h2>Requisitos de egreso (venezolanos y extranjeros):</h2>
+            <h3 *ngFor="let profile of careersInformation.graduationRequirements">
+              {{ profile }}
+            </h3>
+          </div>
+
+          <div class="subitem">
+            <h2>Requisitos para la permanencia en el postgrado</h2>
+            <h3 *ngFor="let profile of careersInformation.permanenceRequirements">
+              {{ profile }}
+            </h3>
+          </div>
+          <div class="title">
+            <div class="get-title">
+              <h2>Titulo a obtener</h2>
+              <h3>{{ careersInformation.getTitle }}</h3>
+
+              <span class="dots-icons-bottom">
+                <span></span><span></span><span></span>
+              </span>
+            </div>
+            <a *ngIf="!careersInformation.link"
+              href="https://www.urbe.edu/Login/?URL_APP=http://www14.urbe.edu/specialities/faces/flow/init.xhtml?idStudy=263"
+              target="_blank" class="ead-button">
+              Inscríbete en línea aquí
+            </a>
+          </div>
+        </article>
+
+        <article *ngIf="careersInformation.ocupationalMarket">
+          <h2>Régimen Académico</h2>
+          <p *ngFor="let market of careersInformation.ocupationalMarket">
+            {{ market }}
+          </p>
+        </article>
+
+        <article [ngStyle]="{
+            display: careersInformation.relatedCareers ? 'block' : 'none'
+          }">
+          <h2>Requisitos de egreso</h2>
+          <p *ngFor="let related of careersInformation.relatedCareers">
+            {{ related }}
+          </p>
+          <div class="title" *ngIf="careersInformation.getTitle">
+            <div class="get-title">
+              <h2>Titulo a obtener</h2>
+              <h3>{{ careersInformation.getTitle }}</h3>
+
+              <span class="dots-icons-bottom">
+                <span></span><span></span><span></span>
+              </span>
+            </div>
+            <a *ngIf="!careersInformation.link"
+              href="https://www.urbe.edu/Login/?URL_APP=http://www14.urbe.edu/specialities/faces/flow/init.xhtml?idStudy=263"
+              target="_blank" class="ead-button">
+              Inscríbete en línea aquí
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <aside class="rightnav">
+      <div class="card" *ngFor="let item of presentationData">
+        <app-presentation-card [data]="item" />
+      </div>
+
+      <app-aside-nav *ngIf="contactsNav" [items]="contactsNav" [title]="'Contactos'" [type]="'contacts'" />
+      <!-- horarios de atencion -->
+      <app-aside-nav *ngIf="scheduleNav" [items]="scheduleNav" [title]="'Horarios de clases'" [type]="'schedule'" />
+      <!-- horarios de atencion -->
+      <app-aside-nav [items]="businessSchedules" [title]="'Horarios de atención'" [type]="'schedule'" />
+      <!-- horarios de consulta -->
+      <app-aside-nav [items]="consultationSchedules" [title]="'Horarios de consultas'" [type]="'schedule'" />
+      <!-- Atención de los participantes -->
+      <app-aside-nav [items]="participantsAttention" [title]="'Atención de los participantes'" [type]="'schedule'" />
+      <!-- Coordinadores de programas -->
+      <app-aside-nav [items]="programsCoordinators" [title]="'Coordinadores de programas'" [type]="'schedule'" />
+      <!-- Acreditación -->
+      <app-aside-nav *ngIf="accreditation" [items]="accreditation" [title]="'Acreditación'" [type]="'schedule'">
+      </app-aside-nav>
+      <app-aside-nav *ngIf="downloadsNav" [items]="downloadsNav" [title]="'Descargas'"
+        [type]="'downloads'"></app-aside-nav>
+    </aside>
+
+    <div class="pensum" *ngIf="pensum">
+      <app-pensum-cards [pensum]="pensum" />
+    </div>
+  </main>
+</div>

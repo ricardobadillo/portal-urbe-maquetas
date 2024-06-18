@@ -1,0 +1,34 @@
+<div class="grid-cards" *ngIf="pensum">
+  <div class="card-container" *ngFor="let level of pensum.levels; let i = index">
+    <h3> Semestre {{ level.nivel.toString() | i18nSelect: semesterMap }} </h3>
+
+    <div class="matters-container">
+      <ng-container *ngFor="let subject of level.subjects">
+        <div class="matters" *ngIf="subject.obligatoria !== 'OPTATIVA' && subject.obligatoria !== 'ELECTIVA'">
+          <!-- SOLO SE MUESTRA LA MATERIA SI ES DISTINTA A ELECTIVA Y OPTATIVA -->
+          <div class="matter">
+            <p> {{ subject.contenidoProgramatico | uppercase }} </p>
+            <span> {{ subject.cantidadUc }} </span>
+          </div>
+
+          <div class="subject" *ngFor="let subject of subject.prelations">
+            <span> Prelación: </span>
+            <p> {{ subject.contenidoProgramatico | uppercase }} </p>
+          </div>
+        </div>
+      </ng-container>
+
+      <div *ngFor="let item of electivas ; let a = index" >
+        <div class="matter" *ngIf="item.nivel === i + 1 ">
+          {{ item.obligatoria }} {{ (a + 1).toString() | i18nSelect: semesterMap }}
+        </div>
+      </div>
+
+      <div *ngFor="let item of optativas ; let a = index" >
+        <div class="matter" *ngIf="item.nivel === i + 1 ">
+          {{ item.obligatoria }} {{ (a + 1).toString() | i18nSelect: semesterMap }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
