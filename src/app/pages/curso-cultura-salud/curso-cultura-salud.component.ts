@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { environment } from '../../../../../../environments/environment';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-curso-cultura-salud',
+  standalone: true,
+  imports: [],
   templateUrl: './curso-cultura-salud.component.html',
   styleUrls: ['./curso-cultura-salud.component.scss']
 })
