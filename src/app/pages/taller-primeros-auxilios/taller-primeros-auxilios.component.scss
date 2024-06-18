@@ -1,0 +1,86 @@
+@use "../../../scss/layout/index" as *;
+@import './../capital-humano/capital-humano-global-styles.scss';
+
+.page-wrapper {
+    @include container;
+
+    @media (min-width: 869px) {
+        flex-direction: row;
+    }
+}
+
+main{
+    @include main-container;
+    align-items: center;
+    margin: 0 auto;
+    text-align: justify;
+    width: 90%;
+    // transform: translateY(-4em);    
+}
+
+// h1{
+//     @include titles;
+// }
+
+h3{
+    @include other-titles;
+    font-size: 2.5rem;
+    text-align: center;
+} 
+
+ul {
+    margin: 0;
+    max-width: 700px;
+    padding: 0;
+    position: relative;
+}
+
+li {
+    background: rgb(202, 223, 255);
+    border-radius: 1.5rem;
+    margin: 1rem 0;
+    padding: 0.5rem 1.5rem 1rem;
+}
+
+// .text-container{
+    // @include text-container;
+    // margin-bottom: 1em;
+    // h2{
+    //     margin-bottom: 0;
+    // }
+// }
+
+
+// .info-container{
+//     @include info-container;
+// }
+
+// .images-container{
+//     display: grid;
+//     gap: 1em;
+//     grid-template-columns: 1fr 1fr;
+//     margin: 0 auto;
+//     place-content: center;
+//     width: 90%;
+// }
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    margin: 4rem auto;
+}
+
+// span{
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+//     margin: 0 auto;
+//     width: 60%;
+// }
+
+.images{
+    height: 180px;
+    width: 240px;
+}

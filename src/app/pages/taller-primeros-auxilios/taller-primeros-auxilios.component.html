@@ -1,0 +1,47 @@
+<app-banner [title]="'Taller de primeros auxilios'"></app-banner>
+
+<div class="page-wrapper">
+  <main>
+    <section class="info-container">
+      <p>
+        La Dirección de Capital Humano en conjunto con la coordinación SHA realizo un taller básico de primeros auxilios
+        el día 8 de octubre del 2022 dirigido al personal del servicio médico y el día 4 de noviembre del 2022 a su
+        personal administrativo. La formación fue por parte de Alfredo Garcia Lcdo. En filosofía, T.S.U en enfermería,
+        Técnico en emergencia pre hospitalaria (soporte avanzado de vida) y diplomado en Gerencia de la Seguridad y Salud
+        Ocupacional.
+      </p>
+
+      <p>
+        El principal objetivo de este taller es fomentar un estilo de vida sano y seguro creando una cultura de
+        prevención, minimizar riesgos y como herramienta para responder adecuadamente ante una urgencia médica dentro o
+        fuera de la universidad.
+      </p>
+
+    </section>
+
+    <section class="text-container">
+      <h3> Temas incluidos</h3>
+      <p>
+        Los temas incluidos en el taller de primeros auxilios básicos son los siguientes:
+      </p>
+
+      <ul>
+        <li> Obligación legal del socorrista. </li>
+        <li> Evaluación de la escena de emergencia. </li>
+        <li> ABC/CAB/XCAB Cadena de vida. </li>
+        <li> Signos vitales. </li>
+        <li> Control de heridas y hemorragias. </li>
+        <li> Manejo y traslado de paciente con convulsiones/tipos de convulsiones. </li>
+        <li> Manejo de lesionados por quemaduras. </li>
+        <li> Inmovilización y traslado de lesionados con traumatismo y fracturas. </li>
+        <li> Abordaje de pacientes con asfixia/ tipos de asfixias. </li>
+      </ul>
+    </section>
+
+    <section class="images-container">
+      <span *ngFor="let image of images">
+        <img src="{{ image }}" class="images">
+      </span>
+    </section>
+  </main>
+</div>

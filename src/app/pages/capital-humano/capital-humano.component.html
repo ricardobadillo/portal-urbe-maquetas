@@ -1,0 +1,67 @@
+<app-banner [title]="'Capital Humano'"/>
+
+<div class="page-wrapper">
+  <main class="main-content">
+    <section class="content-container">
+
+      <section class="student-container">
+        <div class="banner-student-container"></div>
+      </section>
+
+      <section class="slider-container">
+        <app-slider-circle [containerSliderStyles]="{ borderRadius: '12px', padding: '3rem 0rem 2rem 1rem' }" [slides]="slides"/>
+      </section>
+
+      <!--FRASE DEL MES-->
+      <h1> “El éxito no está en vencer siempre sino en no desanimarse nunca” — Napoleón Bonaparte </h1>
+
+      <!--CUMPLEAÑEROS DEL MES-->
+      <section class="birthday-container">
+        <h2> Cumpleañeros del mes </h2>
+          @if (birthdaysData.length > 0) {
+            <div class="people-container">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            } @else {
+              <p> No hay cumpleañeros de este mes registrados en estos momentos </p>
+            }
+      </section>
+    </section>
+  </main>
+
+  <aside>
+    <div class="admision-container">
+      <h2> Misión </h2>
+
+      <p>
+        Somos la unidad estratégica responsable de procurar con calidad y
+        eficiencia la gestión de la gente que labora en esta institución, en un
+        marco de igualdad, justicia y solidaridad.
+      </p>
+
+      <h2> Visión </h2>
+
+      <p>
+        Ser la unidad de referencia en el sector universitario nacional e
+        internacional, como modelo de gestión eficiente y de calidad de capital
+        humano.
+      </p>
+    </div>
+
+    <div>
+      <a routerLink="/capital-humano/seguro-sisalud">
+        <img class="sisalud" src="https://cdn.urbe.edu/portal-urbe/images/rrhh/logo-sisalud.png" alt="Venezolana de Salud Integral"/>
+      </a>
+
+      <app-aside-nav [items]="captacionFormacion" [title]="'Captación y Formación'" [type]="'links'" /><br/>
+
+      <app-aside-nav [items]="ServiciosPersonal" [title]="'Servicios al Personal'" [type]="'links'" /><br/>
+
+      <app-aside-nav [items]="serviciosMedicos" [title]="'Servicio de Seguridad y Salud en el Trabajo'" [type]="'links'" />
+    </div>
+    
+  </aside>
+</div>
+

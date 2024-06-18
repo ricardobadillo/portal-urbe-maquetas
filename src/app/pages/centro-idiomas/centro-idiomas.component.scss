@@ -1,5 +1,5 @@
-@use "../../../../../scss/components/navbar" as *;
-@use "../../../../../scss/layout/index" as *;
+@use "../../../scss/components/navbar" as *;
+@use "../../../scss/layout/index" as *;
 
 .page-wrapper {
   @include container;
@@ -47,9 +47,9 @@ aside {
   .aside__header {
     background-color: var(--dark-blue);
     color: #fff;
-    padding: 1rem 2rem;
     display: block;
     font-size: 1.8rem;
+    padding: 1rem 2rem;
   }
 
   .aside__content {
