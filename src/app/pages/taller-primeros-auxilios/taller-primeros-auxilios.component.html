@@ -54,8 +54,10 @@
   </article>
 
   <section class="images-container">
-    <span *ngFor="let image of images">
-      <img src="{{ image }}" class="images">
+    <span >
+      @for (image of images; track image) {
+        <img src="{{ image }}" class="images">
+      }
     </span>
   </section>
 </main>

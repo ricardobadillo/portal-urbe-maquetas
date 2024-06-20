@@ -1,26 +1,26 @@
 @use "../../../scss/layout" as *;
 
 h2 {
+  color: var(--blue);
   font-size: 3rem;
   font-weight: 600;
-  color: var(--blue);
-  margin-top: -2rem;
   margin-bottom: 0rem;
+  margin-top: -2rem;
 }
 
 a {
-  text-align: center;
+  color: var(--blue);
   font-size: 3rem;
   font-weight: 600;
-  color: var(--blue);
   margin-top: 4rem;
+  text-align: center;
 }
 
 img {
   display: block;
-  width: 100%;
   height: 30rem;
   margin: 3rem auto 3rem;
+  width: 100%;
 }
 
 .page-container {
@@ -30,13 +30,13 @@ img {
 }
 
 .container {
-  width: 95%;
   margin: 4rem auto 2rem auto;
+  width: 95%;
 
   @media screen and (min-width: 1024px) {
-    width: 90%;
     display: flex;
     gap: 2rem;
+    width: 90%;
   }
 
   .main__content {
@@ -46,12 +46,12 @@ img {
 
     .cards {
       display: flex;
-      width: 90%;
-      max-width: 750px;
-      margin: 0 auto;
+      font-size: 1.4rem;
       justify-content: center;
       margin-bottom: 3rem;
-      font-size: 1.4rem;
+      margin: 0 auto;
+      max-width: 750px;
+      width: 90%;
       @media screen and (min-width: 1024px) {
         display: none;
       }
@@ -62,9 +62,9 @@ img {
 .subitem {
   margin-bottom: 3rem;
   h2 {
+    color: var(--blue);
     font-size: 2rem;
     font-weight: 600;
-    color: var(--blue);
     margin-bottom: 0;
   }
   h3 {
@@ -110,8 +110,8 @@ img {
 
 .title {
   display: grid;
-  margin-top: 2rem;
   justify-items: center;
+  margin-top: 2rem;
 
   @media screen and (min-width: 1200px) {
     justify-items: normal;
@@ -126,26 +126,26 @@ img {
 
   .get-title {
     $TitleWidth: calc(100% - 3rem);
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    min-width: 20rem;
-    height: auto;
-    border: 0.2rem var(--dark-blue) solid;
     background: var(--white-1);
     border-radius: 1rem;
-    position: relative;
-    transition: all ease-in 200ms;
+    border: 0.2rem var(--dark-blue) solid;
+    height: auto;
+    justify-content: center;
+    min-width: 20rem;
     padding: 0.5rem 0;
+    position: relative;
+    text-align: center;
+    transition: all ease-in 200ms;
+    width: 100%;
 
     @media (max-width: 1200px) {
       margin-bottom: 5rem;
     }
 
     h3 {
-      place-items: center;
       font-weight: 600;
       margin: 0;
+      place-items: center;
     }
     h2 {
       font-weight: 600;
@@ -154,46 +154,46 @@ img {
 
     &::before {
       content: "";
-      display: block;
       background: var(--white-1);
+      display: block;
       height: 0.2rem;
-      width: calc($TitleWidth + 1rem);
       position: absolute;
+      width: calc($TitleWidth + 1rem);
     }
 
     &::after {
       content: "";
+      background: var(--white-1);
+      bottom: -0.2rem;
       display: block;
-      width: 5rem;
       height: 0.2rem;
+      left: calc(50% - 2.8rem);
       padding: 0.25rem;
       position: absolute;
-      bottom: -0.2rem;
-      left: calc(50% - 2.8rem);
+      width: 5rem;
       z-index: 0;
-      background: var(--white-1);
     }
 
     .dots-icons-bottom {
-      display: flex;
-      position: absolute;
-      left: calc(50% - 2rem);
-      bottom: -0.6rem;
-      z-index: 1;
-      justify-content: space-between;
       align-items: center;
+      bottom: -0.6rem;
+      display: flex;
+      justify-content: space-between;
+      left: calc(50% - 2rem);
+      position: absolute;
       width: 4rem;
+      z-index: 1;
 
       span {
+        aspect-ratio: 1/1;
+        background-color: var(--dark-blue);
+        border-radius: 100%;
         display: block;
         width: 1rem;
-        aspect-ratio: 1/1;
-        border-radius: 100%;
-        background-color: var(--dark-blue);
 
         &:nth-child(2) {
-          width: 0.5rem;
           height: 0.5rem;
+          width: 0.5rem;
         }
       }
     }

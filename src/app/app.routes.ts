@@ -9,4 +9,5 @@ export const routes: Routes = [
   { path: 'cursos-menu', loadComponent: () => import('./pages/cursos-menu/cursos-menu.component').then(c => c.CursosMenuComponent) },
   { path: 'prevencion-ets', loadComponent: () => import('./pages/prevencion-ets/prevencion-ets.component').then(c => c.PrevencionEtsComponent) },
   { path: 'taller-primeros-auxilios', loadComponent: () => import('./pages/taller-primeros-auxilios/taller-primeros-auxilios.component').then(c => c.TallerPrimerosAuxiliosComponent) },
+  { path: 'ciencias-educacion', loadComponent: () => import('./pages/ciencias-educacion/ciencias-educacion.component').then(c => c.CienciasEducacionComponent)},
 ];

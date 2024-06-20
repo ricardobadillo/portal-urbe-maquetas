@@ -6,13 +6,14 @@ import { ProcedimientosComponent } from './pages/procedimientos/procedimientos.c
 import { PrevencionEtsComponent } from './pages/prevencion-ets/prevencion-ets.component'
 import { CursoCulturaSaludComponent } from './pages/curso-cultura-salud/curso-cultura-salud.component'
 import { CursosMenuComponent } from './pages/cursos-menu/cursos-menu.component'
+import { PostgradeInformationComponent } from './components/postgrade-information/postgrade-information.component';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CoordinacionTegComponent, SaludTrabajoComponent, ProcedimientosComponent, PrevencionEtsComponent, CursoCulturaSaludComponent, CursosMenuComponent],
+  imports: [RouterOutlet, CoordinacionTegComponent, SaludTrabajoComponent, ProcedimientosComponent, PrevencionEtsComponent, CursoCulturaSaludComponent, CursosMenuComponent, PostgradeInformationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,23 +1,22 @@
 // Angular.
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 // Modelos.
-import { CareersInformation } from '../../../../../../../../core/models/careers-info';
-import { LinkItem } from '../../../../../../../../core/models/links';
-import { Pensum } from '../../../../../../../../core/models/pensum';
-import { PresentationCardItem } from '../../../../../../../../core/models/presentation.card';
-
-// Servicios.
-import { EstudiosService } from '../../../../../../../../core/services/estudios.service';
-import { MessageService } from '../../../../../../../../core/services/message.service';
-
+import { CareersInformation } from '../../core/models/careers-info';
+import { LinkItem } from '../../core/models/links';
+import { Pensum } from '../../core/models/pensum';
+import { PresentationCardItem } from '../../core/models/presentation.card';
+import { PostgradeInformationComponent } from '../../components/postgrade-information/postgrade-information.component';
+import { BannerComponent } from '../../components/banner/banner.component';
 
 
 @Component({
   selector: 'app-ciencias-educacion',
+  standalone: true,
+  imports:[PostgradeInformationComponent, BannerComponent],
   templateUrl: './ciencias-educacion.component.html',
 })
-export class CienciasEducacionComponent implements OnInit {
+export class CienciasEducacionComponent{
 
   public careersInformation!: CareersInformation;
   public formatFilesURL = 'https://cdn.urbe.edu/portal-urbe/documents/facultades';
@@ -30,7 +29,7 @@ export class CienciasEducacionComponent implements OnInit {
   public presentationData!: PresentationCardItem[];
 
 
-  constructor(private estudiosService: EstudiosService, private messageService: MessageService) {
+  constructor() {
     this.careersInformation = {
       imageUrl: 'https://cdn.urbe.edu/portal-urbe/images/studies/postgrade/doc-cs.edu.jpg',
       title: 'Ciencias de la Educación',
@@ -143,15 +142,4 @@ export class CienciasEducacionComponent implements OnInit {
     ]
   }
 
-  ngOnInit(): void {
-    this.estudiosService.getCareerPensum(35).subscribe({
-      next: (pensum: Pensum) => {
-        this.pensum = pensum;
-      },
-
-      error: () => {
-        this.messageService.show(5000, 'No se pudo obtener el pensum de estudio', 'message-error');
-      }
-    });
-  }
 }
