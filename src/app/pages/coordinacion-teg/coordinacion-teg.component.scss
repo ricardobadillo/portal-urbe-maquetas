@@ -70,6 +70,7 @@
 
   mat-expansion-panel {
     border-radius: 0px !important;
+    box-shadow: none !important;
    
 
     mat-panel-title {
@@ -184,9 +185,6 @@
   }
 }
 
-.mat-expansion-panel-header:hover{
-  background-color: #ffffff !important;
-}
 
 :host::ng-deep{
    .mat-expansion-indicator::after {
@@ -194,7 +192,9 @@
   }
    .mat-expansion-panel-body {
     padding: 0px 24px 15px !important;
+   
   }
 
 }
+
 

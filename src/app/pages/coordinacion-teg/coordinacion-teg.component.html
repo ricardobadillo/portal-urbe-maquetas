@@ -74,10 +74,10 @@
       }
 
       <!-- Lineas de investigacion -->
-      <mat-accordion>
+      <mat-accordion >
         @for (value of fileGroup.info; track value) {
         <mat-expansion-panel>
-          <mat-expansion-panel-header>
+          <mat-expansion-panel-header class="no-hover">
             <mat-panel-title> {{ value.Title }} </mat-panel-title>
           </mat-expansion-panel-header>
 
@@ -85,11 +85,11 @@
             @for (newValue of value.items; track newValue) {
             <mat-expansion-panel>
 
-              <mat-expansion-panel-header>
+              <mat-expansion-panel-header class="no-hover">
                 <mat-panel-title>{{ newValue.newtitle }}</mat-panel-title>
               </mat-expansion-panel-header>
 
-              <mat-accordion >
+              <mat-accordion>
                 @for (informacion of newValue.infovalue; track informacion) {
                 @for (nuevaInformacion of informacion.value; track nuevaInformacion) {
                 <li (click)="nuevaInformacion.expanded = !nuevaInformacion.expanded">
