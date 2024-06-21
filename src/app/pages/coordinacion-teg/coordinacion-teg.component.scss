@@ -1,7 +1,7 @@
 @use "../../../scss/layout/index" as *;
 
 .main {
-  @include container();
+ @include container();
 
   ul {
     cursor: pointer;
@@ -18,7 +18,8 @@
       width: 2rem;
     }
 
-    li:hover {
+  li:hover {
+      
       background-color: var(--gray-light);
       border-radius: 4px;
     }
@@ -64,9 +65,7 @@
   .mat-accordion {
     box-shadow: var(--box-shadow);
     margin: 0rem 0rem 3rem;
-    ::ng-deep .mat-expansion-indicator::after {
-      color: var(--dark-blue);
-    }
+  
   }
 
   mat-expansion-panel {
@@ -84,9 +83,7 @@
       font-weight: 600;
     }
 
-    ::ng-deep .mat-expansion-panel-body {
-      padding: 0px 24px 15px !important;
-    }
+
   }
 
   .card-container {
@@ -183,8 +180,21 @@
       width: 2rem;
     }
 
-    ::ng-deep .mat-expansion-indicator::after {
-      color: var(--dark-blue);
-    }
+
   }
 }
+
+.mat-expansion-panel-header:hover{
+  background-color: #ffffff !important;
+}
+
+:host::ng-deep{
+   .mat-expansion-indicator::after {
+    color: var(--dark-blue);
+  }
+   .mat-expansion-panel-body {
+    padding: 0px 24px 15px !important;
+  }
+
+}
+

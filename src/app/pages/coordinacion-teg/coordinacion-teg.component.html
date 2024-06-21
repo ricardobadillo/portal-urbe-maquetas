@@ -89,7 +89,7 @@
                 <mat-panel-title>{{ newValue.newtitle }}</mat-panel-title>
               </mat-expansion-panel-header>
 
-              <mat-accordion>
+              <mat-accordion >
                 @for (informacion of newValue.infovalue; track informacion) {
                 @for (nuevaInformacion of informacion.value; track nuevaInformacion) {
                 <li (click)="nuevaInformacion.expanded = !nuevaInformacion.expanded">
