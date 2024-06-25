@@ -1,0 +1,19 @@
+<app-banner title="Cátedras libres" />
+
+<main class="main">
+  <h2> Cátedras libres </h2>
+
+  <div class="cards-container">
+    <div class="card" *ngFor="let card of professorshipCards; let i = index">
+      <h3> {{ card.title }} </h3>
+      <img [src]="card.img" [alt]="'Image article - ' + (i + 1)">
+
+      <div class="links">
+        <a *ngFor="let link of card.links" [href]="link.path" [target]="link.target">
+          <mat-icon> {{ link.matIcon }} </mat-icon>
+          <span> {{ link.label }} </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
