@@ -1,0 +1,24 @@
+<app-banner title="Cátedras libres" />
+
+<div class="page-wrapper">
+  <main class="main">
+    <div class="cards-container">
+      @for (card of professorshipCards; track card; let i = $index) {
+        <div class="card">
+          <h3> {{ card.title }} </h3>
+          <img class="card-image" [src]="card.img" [alt]="'Image article - ' + (i + 1)">
+
+          <div class="links">
+            @for (link of card.links; track link) {
+              <a [href]="link.path" [target]="link.target">
+                <mat-icon> {{ link.matIcon }} </mat-icon>
+                <span> {{ link.label }} </span>
+              </a>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </main>
+</div>
+

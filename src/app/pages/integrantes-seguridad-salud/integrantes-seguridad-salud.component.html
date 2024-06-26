@@ -4,19 +4,21 @@
   <main>
     <div class="main-content">
       <section class="cards-container">
-        <div *ngFor="let integrante of integrantes" class="card-item">
-          <article>
-            <h3> {{ integrante.nombre }} </h3>
-            <p> {{ integrante.cargo }} </p>
-            <p> {{ integrante.dpto }} </p>
-            <p>
-              Correo:<br/>
-              <a href="mailto:{{ integrante.correo }}"> {{ integrante.correo }} </a>
-            </p>
-          </article>
+        @for (integrante of integrantes; track integrante) {
+          <div class="card-item">
+            <article>
+              <h3> {{ integrante.nombre }} </h3>
+              <p> {{ integrante.cargo }} </p>
+              <p> {{ integrante.dpto }} </p>
+              <p>
+                Correo:<br/>
+                <a href="mailto:{{ integrante.correo }}"> {{ integrante.correo }} </a>
+              </p>
+            </article>
 
-          <img src="{{ integrante.url }}" alt="" class="person-image" />
-        </div>
+            <img src="{{ integrante.url }}" alt="" class="person-image" />
+          </div>
+        }
       </section>
     </div>
   </main>

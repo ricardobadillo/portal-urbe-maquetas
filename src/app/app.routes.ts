@@ -10,4 +10,7 @@ export const routes: Routes = [
   { path: 'prevencion-ets', loadComponent: () => import('./pages/prevencion-ets/prevencion-ets.component').then(c => c.PrevencionEtsComponent) },
   { path: 'taller-primeros-auxilios', loadComponent: () => import('./pages/taller-primeros-auxilios/taller-primeros-auxilios.component').then(c => c.TallerPrimerosAuxiliosComponent) },
   { path: 'ciencias-educacion', loadComponent: () => import('./pages/ciencias-educacion/ciencias-educacion.component').then(c => c.CienciasEducacionComponent)},
+  { path: 'catedras-libres', loadComponent: () => import('./pages/catedras-libres/catedras-libres.component').then(c => c.CatedrasLibresComponent)},
+  { path: 'capital-humano', loadComponent: () => import('./pages/capital-humano/capital-humano.component').then(c => c.HomeCapitalHumanoComponent)},
+  { path: 'comite-salud', loadComponent: () => import('./pages/comite-salud/comite-salud.component').then(c => c.ComiteSaludComponent)},
 ];

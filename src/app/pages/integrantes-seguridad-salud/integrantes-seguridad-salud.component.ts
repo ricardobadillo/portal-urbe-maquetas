@@ -1,6 +1,5 @@
 // Angular.
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
 
 // Variables de entorno.
 import { BannerComponent } from '../../components/banner/banner.component';
@@ -10,7 +9,7 @@ import { environment } from '../../../environments/environment.development';
 @Component({
   selector: 'app-integrantes-seguridad-salud',
   standalone: true,
-  imports: [BannerComponent, NgFor],
+  imports: [BannerComponent],
   templateUrl: './integrantes-seguridad-salud.component.html',
   styleUrls: ['./integrantes-seguridad-salud.component.scss']
 })

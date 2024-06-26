@@ -1,0 +1,57 @@
+@use '../../../../../../../scss/layout/index' as *;
+
+.main {
+  @include container();
+
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-weight: 900;
+    font-size: 3.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+  }
+
+  p > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--dark-blue);
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  p mat-icon {
+    $size: 1.8rem;
+    font-size: $size;
+    width: $size;
+    height: $size;
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    min-height: 70rem;
+    max-width: 97rem;
+    margin: 3rem auto 0 auto;
+  }
+}
+
+.banner-incripcion {
+  display: block;
+  width: 100%;
+  margin: 0 auto 5rem auto;
+  max-width: 800px;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/5;
+
+    @media (min-width: 375px) {
+      aspect-ratio: initial;
+    }
+  }
+}

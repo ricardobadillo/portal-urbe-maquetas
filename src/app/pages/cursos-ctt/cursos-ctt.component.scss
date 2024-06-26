@@ -1,0 +1,25 @@
+@use '../../../../../../../scss/layout/index' as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  @include container();
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
+  iframe {
+    width: 100%;
+    max-width: 95rem;
+    display: block;
+    margin: 0 auto;
+    height: 60vh;
+  }
+}
